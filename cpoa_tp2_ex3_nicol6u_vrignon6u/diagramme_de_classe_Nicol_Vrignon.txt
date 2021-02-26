@@ -1,0 +1,26 @@
+@startuml
+class Identite {
+ - String : NIP
+ - String : nom
+ - String : prenom
+}
+
+class Etudiant {
+ - HashMap<String,List<Integer>> : resultats
+ + boolean ajouterNote(String, int)
+ + double calculerMoyenneMatiere(String)
+ + double calculerMoyenneGenerale()
+}
+
+class Formation {
+ - String : identifiant
+ - HashMap<String,Integer> : matieres
+}
+
+class Groupe {
+}
+Etudiant -> Identite : identite
+Etudiant -> Formation : formation
+Groupe -> Etudiant : etudiants
+Groupe -> Formation : formation
+@enduml
